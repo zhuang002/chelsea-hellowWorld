@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -22,8 +23,112 @@ public class Main {
 		//booleanSample();
 		//arraySample();
 		//bitOperationSample();
-		stringSample();
-		/*arrayListSample();*/
+		//stringSample();
+		arrayListSample();
+		
+		
+	}
+
+	private static void arrayListSample() {
+		// TODO Auto-generated method stub
+		ArrayList<Integer> iAl = new ArrayList<>();
+		int[] iAr = new int[10];
+		
+		System.out.println("array length:"+iAr.length);
+		System.out.println("arraylist size:"+iAl.size());
+		iAr[0] = 1;
+		iAr[1] = 2;
+		iAr[2] = 3;
+		
+		iAl.add(1);
+		iAl.add(2);
+		iAl.add(3);
+		
+		System.out.println("array elements:");
+		for (int i=0;i<iAr.length;i++) {
+			System.out.print(iAr[i]+",");
+		}
+		System.out.println();
+		
+		System.out.println("arraylist elements:");
+		for (int i=0;i<iAl.size();i++) {
+			System.out.print(iAl.get(i)+",");
+		}
+		System.out.println();
+		
+		
+		// change element value at position 1.
+		
+		iAr[1] = 100;
+		iAl.set(1, 100);
+		
+		System.out.println("array elements:");
+		for (int i=0;i<iAr.length;i++) {
+			System.out.print(iAr[i]+",");
+		}
+		System.out.println();
+		
+		System.out.println("arraylist elements:");
+		for (int i=0;i<iAl.size();i++) {
+			System.out.print(iAl.get(i)+",");
+		}
+		System.out.println();
+		
+		// insert element 200 at position 1
+		for (int i=iAr.length-2;i>=1;i--) { // move elements to next position
+			iAr[i+1] = iAr[i];
+		} 
+		iAr[1] = 200;
+		
+		iAl.add(1,200);
+		System.out.println("array elements:");
+		for (int i:iAr) {
+			System.out.print(i+",");
+		}
+		System.out.println();
+		
+		System.out.println("arraylist elements:");
+		for (int i:iAl) {
+			System.out.print(i+",");
+		}
+		System.out.println();
+		
+		// remove element
+		iAl.remove(1);
+		System.out.println("arraylist elements:");
+		for (int i=0;i<iAl.size();i++) {
+			System.out.print(iAl.get(i)+",");
+		}
+		System.out.println();
+		
+		ArrayList iAl2 = new ArrayList();
+		iAl2.add(1);
+		iAl2.add("String");
+		iAl2.add(true);
+		iAl2.add(12.3);
+		
+		System.out.println("arraylist elements:");
+		for (Object o:iAl2) {
+			System.out.print(o+",");
+		}
+		System.out.println();
+		
+		System.out.println(iAl2.contains("String"));
+		System.out.println(iAl2.contains("abc"));
+		
+		System.out.println(iAl2.indexOf("String"));
+		System.out.println(iAl2.lastIndexOf("String"));
+		
+		
+		// remove element
+		iAl2.remove(12.3);
+		iAl2.remove(1);
+		System.out.println("arraylist elements:");
+		for (Object o:iAl2) {
+			System.out.print(o+",");
+		}
+		System.out.println();
+		
 		
 		
 	}
@@ -77,7 +182,9 @@ public class Main {
 		int end = sc.nextInt();
 		System.out.println(c.substring(start, end));
 		
-		
+		int i1 = Integer.parseInt("12345");
+		double d = Double.parseDouble("134.25");
+		boolean bool = Boolean.parseBoolean("true");
 	}
 
 	private static void bitOperationSample() {
