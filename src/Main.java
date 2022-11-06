@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Scanner;
@@ -27,9 +29,9 @@ public class Main {
 		//arraySample();
 		//bitOperationSample();
 		//stringSample();
-		//arrayListSample();
+		arrayListSample();
 		//setSample();
-		hashmapSample();
+		//hashmapSample();
 		
 		
 	}
@@ -224,7 +226,32 @@ public class Main {
 		}
 		System.out.println();
 		
+		System.out.println("=============================");
 		
+		ArrayList<String> sAl2 = new ArrayList<>();
+		sAl2.add("HuangZheng");
+		sAl2.add("David");
+		sAl2.add("Chelsea");
+		sAl2.add("Hellen");
+		sAl2.add("Peter");
+		
+		
+		System.out.println(sAl2);
+		Collections.sort(sAl2);
+		System.out.println(sAl2);
+		Collections.sort(sAl2, Collections.reverseOrder());
+		System.out.println(sAl2);
+		
+		int[] iAl3 = {3489, 732, 1, 3, 89, 3384};
+		for (int i:iAl3) {
+			System.out.print(i+",");
+		}
+		System.out.println();
+		Arrays.sort(iAl3);
+		for (int i:iAl3) {
+			System.out.print(i+",");
+		}
+		System.out.println();
 		
 	}
 
