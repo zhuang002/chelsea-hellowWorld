@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
@@ -27,9 +28,49 @@ public class Main {
 		//bitOperationSample();
 		//stringSample();
 		//arrayListSample();
-		setSample();
+		//setSample();
+		hashmapSample();
 		
 		
+	}
+
+	private static void hashmapSample() {
+		// TODO Auto-generated method stub
+		HashMap<String, Integer> hashmap = new HashMap<>();
+		
+		hashmap.put("Chelsea", 17);
+		hashmap.put("HuangZheng", 55);
+		hashmap.put("Peter", 16);
+		hashmap.put("David",14);
+		
+		System.out.println(hashmap.get("Chelsea"));
+		System.out.println(hashmap.get("Peter"));
+		
+		HashMap<String, Human> hashmap2 = new HashMap<>();
+		Human person1 = new Human("Chelsea", "Female", 17);
+		Human person2 = new Human("HuangZheng", "Male", 55);
+		Human person3 = new Human("Peter", "Male", 16);
+		Human person4 = new Human("Helen", "Female", 40);
+		
+		hashmap2.put(person1.name, person1);
+		hashmap2.put(person2.name, person2);
+		hashmap2.put(person3.name, person3);
+		hashmap2.put(person4.name, person4);
+		
+		System.out.println(hashmap2.get("Chelsea"));
+		System.out.println(hashmap2.get("Peter"));
+		
+		System.out.println("====================");
+		
+		for (String key:hashmap2.keySet()) {
+			System.out.println(hashmap2.get(key));
+		}
+		
+		System.out.println("=======================");
+		hashmap2.remove("HuangZheng");
+		for (String key:hashmap2.keySet()) {
+			System.out.println(hashmap2.get(key));
+		}
 	}
 
 	private static void setSample() {
@@ -329,4 +370,21 @@ public class Main {
 		
 	}
 
+}
+
+class Human {
+	String name;
+	String gender;
+	int 	age;
+	
+	public Human(String n,String g, int a) {
+		this.name = n;
+		this.gender = g;
+		this.age = a;
+	}
+	
+	@Override
+	public String toString() {
+		return "name:" + name +", gender:" + gender + ", age: " + age;
+	}
 }
