@@ -25,15 +25,81 @@ public class Main {
 		
 		//intSample();
 		//doubleSample();
+		//charSample();
 		//booleanSample();
 		//arraySample();
 		//bitOperationSample();
 		//stringSample();
-		arrayListSample();
+		//arrayListSample();
 		//setSample();
 		//hashmapSample();
+		//bitwiseSample();
+		printfSample();
 		
 		
+	}
+
+	private static void printfSample() {
+		// TODO Auto-generated method stub
+		System.out.printf("Chelsea lost again.\n");
+		System.out.printf("%s won last week\n", "Manchest United");
+		System.out.printf("The score is %d:%d\n", 3,0);
+		double p = 5.1321343141;
+		double area = 10.4254325235342;
+		System.out.printf("The perimeter is %.2f, the area is %.2f\n", p, area);
+		System.out.println("====================");
+		
+		//System.out.printf("Triangle a b c Perimeter Area\n");
+		System.out.printf("%-20s %-5s %-5s %-5s %-10s %-10s\n", "Triangle", "a", "b", "c", "Perimeter", "Area");
+		String triangle = "ABC";
+		int a=4;
+		int b=5;
+		int c=6;
+		int P=a+b+c;
+		p=(double)P/2;
+		area = Math.sqrt(p*(p-a)*(p-b)*(p-c));
+		System.out.printf("%-20s %-5d %-5d %-5d %-10d %-10.2f\n", triangle, a, b, c, P, area);
+	}
+
+	private static void bitwiseSample() {
+		// TODO Auto-generated method stub
+		int a = 1024*1024;
+		System.out.println(a+":"+Integer.toBinaryString(a));
+		
+		int b = 0x08000800;
+		System.out.println(b+":"+Integer.toBinaryString(b));
+		
+		int c = 0B1100110001100110000000;
+		System.out.println(c+":"+Integer.toBinaryString(c));
+		
+		c >>= 1;
+		System.out.println(c+">>1:"+Integer.toBinaryString(c));
+		
+		c >>= 2;
+		System.out.println(c+">>2:"+Integer.toBinaryString(c));
+		
+		c = ~c;
+		System.out.println("~"+c+":"+Integer.toBinaryString(c));
+		
+		a=0B110011000;
+		b=0B011101110;
+				
+		System.out.println("a&b:"+Integer.toBinaryString(a&b));
+		System.out.println("a|b:"+Integer.toBinaryString(a|b));
+		System.out.println("a^b:"+Integer.toBinaryString(a^b));
+		
+		
+		
+		
+	}
+
+	private static void charSample() {
+		// TODO Auto-generated method stub
+		char c1 = 'A';
+		char c2 = 'A'+1;
+		char c3 = 'a'+5;
+		
+		System.out.println(c1+" "+c2+" "+c3);
 	}
 
 	private static void hashmapSample() {
@@ -325,7 +391,7 @@ public class Main {
 
 	private static void arraySample() {
 		// TODO Auto-generated method stub
-		int[] intArray = new int[10];
+		/*int[] intArray = new int[10];
 		for (int i=0;i<intArray.length;i++) {
 			intArray[i]=100-i*5;
 		}
@@ -339,8 +405,26 @@ public class Main {
 		for (int i=0;i<intArray2.length;i++) {
 			System.out.print(intArray2[i]+" ");
 		}
+		System.out.println();*/
+		
+		SortData[] data = new SortData[5];
+		data[0]=new SortData(5,"abc");
+		data[1]=new SortData(10, "def");
+		data[2]=new SortData(10, "123");
+		data[3]=new SortData(12, "789");
+		data[4] = new SortData(7, "a12");
+		Arrays.sort(data);
+		
+		for (SortData d:data) {
+			System.out.print(d+" ");
+		}
 		System.out.println();
+		
+		
+		
 	}
+	
+	
 
 	private static void booleanSample() {
 		// TODO Auto-generated method stub
@@ -414,4 +498,27 @@ class Human {
 	public String toString() {
 		return "name:" + name +", gender:" + gender + ", age: " + age;
 	}
+}
+
+class SortData implements Comparable<SortData> {
+	int a;
+	String b;
+	
+	public SortData(int a, String b) {
+		this.a = a;
+		this.b = b;
+	}
+	
+	@Override
+	public String toString() {
+		return "{"+this.a+",\""+this.b+"\"}";
+	}
+
+	@Override
+	public int compareTo(SortData o) {
+		// TODO Auto-generated method stub
+		return this.a - o.a;
+	}
+
+	
 }
